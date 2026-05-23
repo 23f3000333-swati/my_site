@@ -42,9 +42,61 @@ if page == "🏠 Home":
 # ==========================================
 # PAGE 2: PROJECTS
 # ==========================================
+# ==========================================
+# PAGE 2: PROJECTS
+# ==========================================
 elif page == "🚀 Projects":
-    st.title("🚀 Featured Projects & Technical Milestones")
-    st.write("Here is a breakdown of the core projects I've engineered:")
+    st.title("🚀 Featured Projects & Technical Architecture")
+    st.write("Deep-dives into applications I've engineered, detailing system design and tech stacks.")
+    
+    # ─── MAIN FEATURED PROJECT: PLACEMENT PORTAL V2 ───
+    st.markdown("---")
+    st.markdown("## 🏢 Campus Placement Portal Application (PPA V2)")
+    st.caption("🏆 Core Full-Stack & Asynchronous Architecture Project")
+    
+    # Columns for high-level summary badges
+    b1, b2, b3, b4 = st.columns(4)
+    b1.metric("Backend Layer", "Flask (Python)")
+    b2.metric("Frontend Engine", "Vue.js 3 / Vite")
+    b3.metric("Task Queue", "Celery + Redis")
+    b4.metric("Database Layer", "SQLite / SQLAlchemy")
+
+    st.markdown("""
+    ### 📝 System Overview
+    Designed and implemented a full-stack, secure, role-based application that streamlines corporate campus recruitment. The application automates workflows for three core system actors: **Institute Administrators, Corporate Recruiters, and Students**.
+    """)
+    
+    # Dropdowns to keep details neat but thorough
+    with st.expander("🔑 1. Backend REST API Architecture & Security"):
+        st.markdown("""
+        - **Engineered Blueprint Structure:** Leveraged Flask's modular App Factory pattern with custom blueprints to separate business logic handlers cleanly.
+        - **JWT Security Integration:** Implemented client state isolation via `Flask-JWT-Extended` token authentication. All data-fetching API requests are protected via server-side cryptographic verification with custom role-based endpoint validation guards.
+        - **Automated Validation:** Built rigorous validation layers (such as real-time **CGPA-based eligibility check hooks**) preventing student sign-ups from accessing drives unless criteria are met.
+        """)
+        
+    with st.expander("⚡ 2. Asynchronous Task Architecture & Automation Core"):
+        st.markdown("""
+        - **Distributed Task Pipeline:** Integrated **Celery workers** using **Redis** as an in-memory transactional message broker to handle non-blocking, multi-threaded background infrastructure tasks.
+        - **Dynamic File Generation:** Designed an asynchronous pipeline allowing students to trigger data history extractions via CSV, generating on-disk files in background contexts without causing main event-loop latency.
+        - **Scheduled Automation (Celery Beat):** Programmed automated cron routines executing periodic notifications:
+          - *Daily at 8:00 AM:* Scans expiration thresholds and fires upcoming drive deadline warnings via **Flask-Mail** SMTP protocols directly to qualified students.
+          - *1st of Every Month at 9:00 AM:* Compiles real-time metrics into custom HTML administrative reports and logs them with executive team members automatically.
+        """)
+
+    with st.expander("💾 3. Relational Database Schema Design"):
+        st.markdown("""
+        Utilized **SQLAlchemy Object-Relational Mapping (ORM)** to construct an abstract relational SQLite storage architecture with explicit cascading relationships:
+        - **`User` Table:** Manages core login profiles, roles (Admin/Student/Company), system activation flags, and static file upload attachments (resume hashes).
+        - **`CompanyDetails` Table:** Maintained with a structural *One-to-One* mapping connection key bound directly onto its respective security user login.
+        - **`PlacementDrive` & `Application` Tables:** Handled with a relational *One-to-Many* tree structure cascading downward across instances (`Company` ➔ `Drives` ➔ `Applications`).
+        """)
+
+    with st.expander("💻 4. Reactive Frontend Single-Page App Design"):
+        st.markdown("""
+        - **Decoupled Client Space:** Constructed a fast client SPA layer via **Vue.js 3** and **Vite**.
+        - **Role-Based Guards:** Authored custom route interceptors inside the **Vue Router** configuration preventing lateral data modifications or privilege escalations.
+        - **Axios Stateful Client:** Integrated Axios middleware configurations to seamlessly intercept, stitch, and maintain Authorization Header context states across state reloads.
+        """)
     
     # Project 1 Container
     with st.container():
