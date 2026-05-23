@@ -10,7 +10,7 @@ page = st.sidebar.radio("Go to:", ["🏠 Home", "🚀 Projects", "🤖 ML Playgr
 # Add a quick contact badge in the sidebar
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Connect with Me")
-st.sidebar.markdown("🔗 [GitHub](https://github.) | 💼 [LinkedIn](https://linkedin.com)")
+st.sidebar.markdown("🔗 [GitHub](https://github.com/23f3000333-swati) | 💼 [LinkedIn](https://www.linkedin.com/in/swati-singh-0ab959264/)")
 
 # ==========================================
 # PAGE 1: HOME
