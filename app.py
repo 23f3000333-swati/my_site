@@ -28,7 +28,7 @@ if page == "🏠 Home":
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### 🛠️ Core Tech Stack")
+        st.markdown("### [🛠️ Core Tech Stack](https://placement-portal-jqbl.vercel.app/)")
         st.write("- **Languages:** Python, SQL, Shell Scripting (`bash`, `awk`, `sed`) ")
         st.write("- **Machine Learning / NLP:** Transformers, Ensemble Stacking, Feature Engineering")
         st.write("- **Tools & Platforms:** Git/GitHub, Linux Environments, VS Code, Kaggle")
