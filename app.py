@@ -87,16 +87,7 @@ elif page == "🚀 Projects":
         - **Role-Based Guards:** Authored custom route interceptors inside the **Vue Router** configuration preventing lateral data modifications or privilege escalations.
         - **Axios Stateful Client:** Integrated Axios middleware configurations to seamlessly intercept, stitch, and maintain Authorization Header context states across state reloads.
         """)
-    
-    # Project 1 Container
-    with st.container():
-        st.markdown("### 🗣️ Multilingual Speech Recognition (Whisper Fine-Tuning)")
-        st.caption("Keywords: NLP | Speech-to-Text | Model Fine-Tuning")
-        st.write(
-            "Fine-tuned OpenAI's Whisper model for accurate speech transcription in multilingual competitive setups. "
-            "Handled complex audio preprocessing pipelines, custom dataset mappings, and resolved intensive training log bottlenecks."
-        )
-        st.markdown("---")
+
     # ─── BDM PROJECT CONTAINER ───
     with st.container():
         st.markdown("### 🪵 [Operations Optimization & Expansion Strategy](https://github.com/23f3000333-swati/bdm_sales_inventory_analysis)")
