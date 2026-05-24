@@ -42,9 +42,6 @@ if page == "🏠 Home":
 # ==========================================
 # PAGE 2: PROJECTS
 # ==========================================
-# ==========================================
-# PAGE 2: PROJECTS
-# ==========================================
 elif page == "🚀 Projects":
     st.title("🚀 Featured Projects & Technical Architecture")
     st.write("Deep-dives into applications I've engineered, detailing system design and tech stacks.")
@@ -53,14 +50,7 @@ elif page == "🚀 Projects":
     st.markdown("---")
     st.markdown("## 🏢 Campus Placement Portal Application (PPA V2)")
     st.caption("🏆 Core Full-Stack & Asynchronous Architecture Project")
-    
-    # Columns for high-level summary badges
-    b1, b2, b3, b4 = st.columns(4)
-    b1.metric("Backend Layer", "Flask (Python)")
-    b2.metric("Frontend Engine", "Vue.js 3 / Vite")
-    b3.metric("Task Queue", "Celery + Redis")
-    b4.metric("Database Layer", "SQLite / SQLAlchemy")
-
+    st.caption("Keywords: Flask (Python) | Vue.js 3 / Vite | Celery + Redis | SQLAlchemy | JWT Authentication")
     st.markdown("""
     ### 📝 System Overview
     Designed and implemented a full-stack, secure, role-based application that streamlines corporate campus recruitment. The application automates workflows for three core system actors: **Institute Administrators, Corporate Recruiters, and Students**.
