@@ -28,7 +28,7 @@ if page == "🏠 Home":
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### [🛠️ Core Tech Stack](https://placement-portal-jqbl.vercel.app/)")
+        st.markdown("### 🛠️ Core Tech Stack ")
         st.write("- **Languages:** Python, SQL, Shell Scripting (`bash`, `awk`, `sed`) ")
         st.write("- **Machine Learning / NLP:** Transformers, Ensemble Stacking, Feature Engineering")
         st.write("- **Tools & Platforms:** Git/GitHub, Linux Environments, VS Code, Kaggle")
@@ -52,7 +52,7 @@ elif page == "🚀 Projects":
     st.caption("🏆 Core Full-Stack & Asynchronous Architecture Project")
     st.caption("Keywords: Flask (Python) | Vue.js 3 / Vite | Celery + Redis | SQLAlchemy | JWT Authentication")
     st.markdown("""
-    ### 📝 System Overview
+    ### 📝 [System Overview](https://placement-portal-jqbl.vercel.app/)
     Designed and implemented a full-stack, secure, role-based application that streamlines corporate campus recruitment. The application automates workflows for three core system actors: **Institute Administrators, Corporate Recruiters, and Students**.
     """)
     
@@ -97,7 +97,34 @@ elif page == "🚀 Projects":
             "Handled complex audio preprocessing pipelines, custom dataset mappings, and resolved intensive training log bottlenecks."
         )
         st.markdown("---")
+    # ─── BDM PROJECT CONTAINER ───
+    with st.container():
+        st.markdown("### 🪵 [Operations Optimization & Expansion Strategy](https://github.com/23f3000333-swati/bdm_sales_inventory_analysis)")
+        st.caption("Keywords: Supply Chain Modeling | Descriptive Statistics | Multi-Tier Pricing")
+        st.write(
+            "Executed an end-to-end operational diagnostic study for a regional manufacturing firm (**Ramu Doors Pvt Ltd**). "
+            "Cleaned purchase ledgers and built data-driven inventory thresholds to eliminate seasonal pricing spikes."
+        )
         
+        # Interactive Mini-Evaluator right inside the project description
+        with st.expander("📊 View Core Methodology & Interactive Pricing Matrix"):
+            st.markdown("""
+            - **Procurement Stabilization:** Modeled structured inventory minimums and consolidated standalone vendor invoices into long-term master agreements to leverage volume discounts.
+            - **Margin-Driven Alignment:** Analyzed sales matrices against construction cycles to pivot focus from high-volume, low-margin products to premium, high-margin segments.
+            - **Territory Penetration:** Formulated a franchise expansion blueprint for Tier-2/Tier-3 municipal hubs, standardizing B2B pricing grids and local search engine visibility layouts.
+            """)
+            
+            # Interactive Slider to show off business logic execution
+            units = st.slider("Simulate Contractor Order Volume (Units):", 10, 500, 150, key="bdm_proj_slider")
+            if units < 50:
+                tier, discount, price = "Tier 3 (Retail)", "0%", 3200
+            elif units < 150:
+                tier, discount, price = "Tier 2 (Contractor)", "8%", 2944
+            else:
+                tier, discount, price = "Tier 1 (Wholesale)", "15%", 2720
+                
+            st.markdown(f"**Allocation:** `{tier}` | **Discount:** `{discount}` | **Optimized Unit Cost:** `₹{price}`")
+        st.markdown("---")    
     # Project 2 Container
     with st.container():
         st.markdown("### 📈 Sentiment Analysis via Stacking Ensembles")
